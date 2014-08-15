@@ -353,13 +353,13 @@ module.exports = function (grunt) {
 		// Run some tasks in parallel to speed up the build process
 		concurrent: {
 			server: [
-				'copy:styles'
+				'sass:dist'
 			],
 			test: [
 				'copy:styles'
 			],
 			dist: [
-				'copy:styles',
+				'sass:dist',
 				'imagemin',
 				'svgmin'
 			]
@@ -371,9 +371,21 @@ module.exports = function (grunt) {
 				configFile: 'test/karma.conf.js',
 				singleRun: true
 			}
+		},
+		sass: {
+			dist: {
+				options: {
+					style: 'expanded'
+				},
+				files: {
+					'.tmp/styles/main.css': '<%= yeoman.app %>/styles/main.scss'
+				}
+			}
 		}
 	});
 
+
+	grunt.loadNpmTasks('grunt-contrib-sass');
 
 	grunt.registerTask('serve', 'Compile then start a connect web server', function (target) {
 		if (target === 'dist') {
