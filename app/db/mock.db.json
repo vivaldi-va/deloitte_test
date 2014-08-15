@@ -1,0 +1,96 @@
+{
+	"categories": [
+		"woman's footwear",
+		"men's footwear",
+		"women's casualwear",
+		"men's casualwear",
+		"women's formalwear",
+		"men's formalwear"
+	],
+	"vouchers": [
+		"5_QUID_OFF",
+		"10_QUID_OFF",
+		"15_QUID_OFF"
+	],
+	"products": [
+		{
+			"name": "Almond Toe Court Shoes, Patent Black",
+			"category": 0,
+			"price": 99.0,
+			"quant": 5
+		},
+		{
+			"name": "Suede Shoes, Blue",
+			"category": 0,
+			"price": 42.0,
+			"quant": 4
+		},
+		{
+			"name": "Leather Driver Saddle Loafers, Tan",
+			"category": 1,
+			"price": 34.0,
+			"quant": 12
+		},
+		{
+			"name": "flip flops, red",
+			"category": 1,
+			"price": 19.0,
+			"quant": 6
+		},
+		{
+			"name": "flip flops, blue",
+			"category": 1,
+			"price": 19.0,
+			"quant": 0
+		},
+		{
+			"name": "gold button cardigain, black",
+			"category": 2,
+			"price": 167.0,
+			"quant": 6
+		},
+		{
+			"name": "cotton shorts, medium red",
+			"category": 2,
+			"price": 30.0,
+			"quant": 5
+		},
+		{
+			"name": "fine stripe short sleeve shirt, grey",
+			"category": 3,
+			"price": 49.99,
+			"quant": 9
+		},
+		{
+			"name": "fine stripe short sleeve shirt, green",
+			"category": 3,
+			"price": 49.99,
+			"quant": 3,
+			"discount": 39.99
+		},
+		{
+			"name": "sharkskin waistcoat, charcoal",
+			"category": 5,
+			"price": 75.0,
+			"quant": 2
+		},
+		{
+			"name": "lightweight patch pocket blazer, deer",
+			"category": 5,
+			"price": 175.50,
+			"quant": 1
+		},
+		{
+			"name": "bird print dress, black",
+			"category": 4,
+			"price": 270.0,
+			"quant": 10
+		},
+		{
+			"name": "mid twist cut-out dress, pink",
+			"category": 4,
+			"price": 540,
+			"quant": 5
+		}
+	]
+}
