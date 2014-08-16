@@ -1,22 +1,26 @@
 'use strict';
 
-describe('Controller: MainCtrl', function () {
+describe('Controller: ProductCtrl', function () {
 
-  // load the controller's module
-  beforeEach(module('deloitteDevTestApp'));
+	// load the controller's module
+	beforeEach(module('DelDev'));
 
-  var MainCtrl,
-    scope;
+	var ProdCtrl,
+		scope;
 
-  // Initialize the controller and a mock scope
-  beforeEach(inject(function ($controller, $rootScope) {
-    scope = $rootScope.$new();
-    MainCtrl = $controller('MainCtrl', {
-      $scope: scope
-    });
-  }));
+	// Initialize the controller and a mock scope
+	beforeEach(inject(function ($controller, $rootScope, ProductService) {
+		scope = $rootScope.$new();
+		ProdCtrl = $controller('ProdCtrl', {
+			$scope: scope
+		});
 
-  it('should attach a list of awesomeThings to the scope', function () {
-    expect(scope.awesomeThings.length).toBe(3);
-  });
+		scope.products = ['hue']
+	}));
+
+	it('should have a single product', function() {
+		expect(scope.products.length).toBe(1);
+	});
+
+
 });
