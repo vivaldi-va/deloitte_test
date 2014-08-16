@@ -9,19 +9,27 @@
 				<ul class="media-list">
 					<li class="media" ng-repeat="product in products track by $index">
 						<a class="pull-left" href="#">
-							<img class="media-object" src="http://placehold.it/64x64" alt="">
+							<img class="media-object img-thumbnail" src="http://placehold.it/64x64" alt="thumbnail for {{ product.name }}">
 						</a>
 						<div class="media-body">
 							<h4 class="media-heading">{{ product.name }}</h4>
 
 							<div class="row">
 								<div class="col-xs-4">
-									<span ng-class="{'text-irrelevant': !!product.discount}">{{ product.price | currency }}</span>
-									<span ng-if="product.discount">{{ product.discount | currency}}</span>
+									<span class="" ng-if="!product.discount"><strong>{{ product.price | currency }}</strong></span>
+									<span class="text-muted" ng-if="!!product.discount"><s>{{ product.price | currency }}</s></span>
+									<span ng-if="product.discount" class="text-primary"><strong>{{ product.discount | currency}}</strong></span>
 								</div>
 								<div class="col-xs-4">In stock: {{ product.quant }}</div>
 								<div class="col-xs-4">
-									<button class="btn btn-xs btn-primary" ng-click="addProduct(product)">Add to cart</button></div>
+									<button class="btn btn-xs"
+											ng-class="{'btn-primary': product.quant>0, 'btn-danger': product.quant===0}"
+											ng-disabled="!product.quant"
+											ng-click="addProduct(product)">
+										<span ng-if="!!product.quant">Add to cart</span>
+										<span ng-if="!product.quant">Out of stock</span>
+									</button>
+								</div>
 							</div>
 						</div>
 					</li>

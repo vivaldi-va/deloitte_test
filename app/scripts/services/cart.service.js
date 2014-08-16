@@ -16,6 +16,7 @@ angular.module('DelDev.Services')
 
 			var dfd 			= $q.defer();
 			var productInCart	= false;
+			var productInStock	= true;
 
 			var inCartProduct = {
 				_id: product._id,
@@ -31,42 +32,68 @@ angular.module('DelDev.Services')
 					if(product.quant>0) {
 						$rootScope.products[key].quant --;
 					} else {
-						dfd.reject("ERR_NO_STOCK");
+						productInStock = false;
+						//dfd.reject("ERR_NO_STOCK");
 					}
 
 				}
 			});
 
-			angular.forEach($rootScope.cart, function(val, key) {
-				if(val._id === product._id) {
+			if(productInStock) {
 
-					productInCart = true;
-					$rootScope.cart[key].quant++
+				angular.forEach($rootScope.cart, function(val, key) {
+					if(val._id === product._id) {
+
+						productInCart = true;
+						$rootScope.cart[key].quant++
+					}
+				});
+
+
+				if(!productInCart) {
+					$rootScope.cart.push(inCartProduct);
 				}
-			});
 
-
-			if(!productInCart) {
-				$rootScope.cart.push(inCartProduct);
+				dfd.resolve()
+			} else {
+				dfd.reject('ERR_NO_STOCK');
 			}
 
-			dfd.resolve();
 
 			return dfd.promise;
 		}
 
 		function _removeFromCart(id) {
 			$log.debug("Remove %d from cart array", id);
+
+			var inCart = true;
+
+			angular.forEach($rootScope.products, function(product, key) {
+				if(product._id === id) {
+
+					if(inCart) {
+						$rootScope.products[key].quant++;
+					}
+
+				}
+			});
+
 			angular.forEach($rootScope.cart, function(product, key) {
 				if(product._id === id) {
 					if(product.quant > 1) {
 						$rootScope.cart[key].quant--;
 					} else {
 						$rootScope.cart.splice(key, 1);
+						inCart = false;
 					}
 
 				}
 			});
+
+
+
+
+
 		}
 
 		return {

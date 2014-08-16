@@ -25,5 +25,6 @@ angular
 		'DelDev.Directives'
 	])
 	.run(function($rootScope) {
-		$rootScope.cart = [];
+		$rootScope.cart		= [];
+		$rootScope.voucher	= null;
 	});

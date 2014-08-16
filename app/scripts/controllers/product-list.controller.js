@@ -7,6 +7,9 @@
 angular.module('DelDev.Controllers')
 	.controller('ProdCtrl', function($scope, $rootScope, $log, ProductService, CartService) {
 
+		$scope.errors		= [];
+		$scope.successes	= [];
+
 		ProductService.get()
 			.then(function(data) {
 				$rootScope.products = data.products;
@@ -14,7 +17,13 @@ angular.module('DelDev.Controllers')
 
 		$scope.addProduct = function(product) {
 			$log.debug("Add product to cart");
-			CartService.add(product);
+			CartService.add(product)
+				.then(function(success) {
+
+				},
+				function(err) {
+					$scope.errors.push(err);
+				});
 		};
 
 	});
