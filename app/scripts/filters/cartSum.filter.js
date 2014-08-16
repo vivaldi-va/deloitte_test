@@ -8,7 +8,12 @@ angular.module('DelDev.Filters')
 		return function(products) {
 			var sum = 0;
 			angular.forEach(products, function(product) {
-				sum += (product.price * product.quant);
+				var calcedPrice = product.price;
+				if(!!product.quant) {
+					calcedPrice *= product.quant;
+				}
+
+				sum += calcedPrice;
 			});
 
 			return sum;

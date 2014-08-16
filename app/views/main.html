@@ -41,8 +41,7 @@
 		<div class="panel panel-default" ng-controller="CartCtrl">
 			<div class="panel-heading">
 				<h3 class="panel-title">Your cart</h3>
-				<span>{{ cart | sum | currency }}</span>
-			</div>
+		</div>
 
 			<ul class="list-group">
 				<li class="list-group-item" ng-repeat="product in cart track by $index">
@@ -51,10 +50,16 @@
 						<div class="col-xs-2">{{ product.price | currency}}</div>
 						<div class="col-xs-2">{{ product.quant }}pcs</div>
 						<div class="col-xs-2">
-							<button class="btn btn-default btn-xs" ng-click="removeFromCart(product._id)">
+							<button class="btn btn-danger btn-xs" ng-click="removeFromCart(product._id)">
 								<span class="glyphicon glyphicon-remove"></span>
 							</button>
 						</div>
+					</div>
+				</li>
+				<li class="list-group-item" ng-if="cart.length">
+					<div class="row">
+						<div class="col-xs-8"><strong>Cart total</strong></div>
+						<div class="col-xs-4"><span class="lead">{{ cart | sum | currency }}</span></div>
 					</div>
 				</li>
 			</ul>
@@ -66,7 +71,12 @@
 						<label for="voucher-input">Enter voucher code:</label>
 						<input id="voucher-input" class="form-control" type="text" ng-model="voucherCode"/>
 					</div>
-					<button class="btn btn-default pull-right">Use voucher</button>
+					<div class="row">
+						<div class="col-sm-6"><span class="text-danger" ng-if="voucherError">{{ voucherError }}</span></div>
+						<div class="col-sm-6">
+							<button class="btn btn-default pull-right">Use voucher</button>
+						</div>
+					</div>
 				</form>
 			</div>
 

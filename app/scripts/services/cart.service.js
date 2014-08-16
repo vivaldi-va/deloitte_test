@@ -22,7 +22,8 @@ angular.module('DelDev.Services')
 				_id: product._id,
 				name: product.name,
 				quant: 1,
-				price: !!product.discount ? product.discount : product.price
+				price: !!product.discount ? product.discount : product.price,
+				category: product.category
 			};
 
 
