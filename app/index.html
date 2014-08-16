@@ -15,7 +15,7 @@
 	<link rel="stylesheet" href="styles/main.css">
 	<!-- endbuild -->
 </head>
-<body ng-app="deloitteDevTestApp">
+<body ng-app="DelDev">
 <!--[if lt IE 7]>
 <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade
 	your browser</a> to improve your experience.</p>
@@ -23,20 +23,14 @@
 
 <!-- Add your site or application content here -->
 <div class="container">
-	<div class="header">
+	<div class="header clearfix">
 		<ul class="nav nav-pills pull-right">
 			<li class="active"><a ng-href="#">Home</a></li>
-			<li><a ng-href="#/about">About</a></li>
-			<li><a ng-href="#">Contact</a></li>
 		</ul>
 		<h3 class="text-muted">deloitteDevTest</h3>
 	</div>
 
 	<div ng-view=""></div>
-
-	<div class="footer">
-		<p><span class="glyphicon glyphicon-heart"></span> from the Yeoman team</p>
-	</div>
 </div>
 
 
@@ -54,13 +48,23 @@
 <script src="bower_components/json3/lib/json3.js"></script>
 <script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
 <script src="bower_components/angular-route/angular-route.js"></script>
+<script src="bower_components/angular-i18n/angular-locale_en-gb.js"></script>
 <!-- endbower -->
 <!-- endbuild -->
 
 <!-- build:js({.tmp,app}) scripts/scripts.js -->
 <script src="scripts/app.js"></script>
-<script src="scripts/controllers/main.js"></script>
-<script src="scripts/controllers/about.js"></script>
+<script src="scripts/config/routes.config.js"></script>
+
+<script src="scripts/services/cart.service.js"></script>
+<script src="scripts/services/products.service.js"></script>
+<script src="scripts/services/voucher.service.js"></script>
+
+<script src="scripts/filters/cartSum.filter.js"></script>
+
+<script src="scripts/controllers/main.controller.js"></script>
+<script src="scripts/controllers/cart.controller.js"></script>
+<script src="scripts/controllers/product-list.controller.js"></script>
 <!-- endbuild -->
 </body>
 </html>

@@ -14,54 +14,63 @@
 	],
 	"products": [
 		{
+			"_id": 1,
 			"name": "Almond Toe Court Shoes, Patent Black",
 			"category": 0,
 			"price": 99.0,
 			"quant": 5
 		},
 		{
+			"_id": 2,
 			"name": "Suede Shoes, Blue",
 			"category": 0,
 			"price": 42.0,
 			"quant": 4
 		},
 		{
+			"_id": 3,
 			"name": "Leather Driver Saddle Loafers, Tan",
 			"category": 1,
 			"price": 34.0,
 			"quant": 12
 		},
 		{
+			"_id": 4,
 			"name": "flip flops, red",
 			"category": 1,
 			"price": 19.0,
 			"quant": 6
 		},
 		{
+			"_id": 5,
 			"name": "flip flops, blue",
 			"category": 1,
 			"price": 19.0,
 			"quant": 0
 		},
 		{
+			"_id": 6,
 			"name": "gold button cardigain, black",
 			"category": 2,
 			"price": 167.0,
 			"quant": 6
 		},
 		{
+			"_id": 7,
 			"name": "cotton shorts, medium red",
 			"category": 2,
 			"price": 30.0,
 			"quant": 5
 		},
 		{
+			"_id": 8,
 			"name": "fine stripe short sleeve shirt, grey",
 			"category": 3,
 			"price": 49.99,
 			"quant": 9
 		},
 		{
+			"_id": 9,
 			"name": "fine stripe short sleeve shirt, green",
 			"category": 3,
 			"price": 49.99,
@@ -69,24 +78,28 @@
 			"discount": 39.99
 		},
 		{
+			"_id": 10,
 			"name": "sharkskin waistcoat, charcoal",
 			"category": 5,
 			"price": 75.0,
 			"quant": 2
 		},
 		{
+			"_id": 11,
 			"name": "lightweight patch pocket blazer, deer",
 			"category": 5,
 			"price": 175.50,
 			"quant": 1
 		},
 		{
+			"_id": 12,
 			"name": "bird print dress, black",
 			"category": 4,
 			"price": 270.0,
 			"quant": 10
 		},
 		{
+			"_id": 13,
 			"name": "mid twist cut-out dress, pink",
 			"category": 4,
 			"price": 540,
