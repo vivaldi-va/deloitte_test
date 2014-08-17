@@ -3,7 +3,7 @@
 describe('Controller: ProductCtrl', function () {
 
 	// load the controller's module
-	beforeEach(module('DelDev'));
+	beforeEach(angular.mock.module('DelDev'));
 
 	var ProdCtrl,
 		scope;

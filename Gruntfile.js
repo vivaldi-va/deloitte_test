@@ -371,6 +371,9 @@ module.exports = function (grunt) {
 			unit: {
 				configFile: 'test/karma.conf.js',
 				singleRun: true
+			},
+			e2e: {
+				configFile: 'test/karma-e2e.conf.js'
 			}
 		},
 		sass: {
